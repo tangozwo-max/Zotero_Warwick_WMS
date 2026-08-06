@@ -409,11 +409,11 @@
         </if>
         <else>
            <group delimiter=":&#160;"> <!-- WWMS change 1.10 colon before non-page locator per guide p5 -->
-            <group delimiter=", "> <!-- WMS 1.4 fix add , -->     ← leave
+            <group delimiter=", "> <!-- WMS 1.4 fix add , -->     
               <text macro="author-short"/>
               <text macro="year-date"/>
             </group>
-            <group delimiter="&#160;">                            ← leave
+            <group delimiter="&#160;">                           
               <label variable="locator" form="short" strip-periods="false"/>
               <text variable="locator"/>
             </group>
