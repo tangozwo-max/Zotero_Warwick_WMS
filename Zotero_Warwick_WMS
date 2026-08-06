@@ -20,8 +20,27 @@
     All changes are marked in the code below with version number for audit trial.
           ______________
     Version 1.10 : 
-          - Warwick WMS expects a . after the Author before the year. For persons that is covered with first name abbreviation, but for insitutions a . need to be added. Double .. are avoided.
-          - removed text-case="sentence", should be done in Zotero to manage special cases such as U.S, I, Facebook etc once. Use Zotero sentence text function and then manually edit the few mistakes.
+          - removed text-case="sentence" from title macro - TESTED AND REJECTED:
+            lowercases proper nouns (Facebook -> facebook, LIFE -> life, "I am" -> "i am").
+            Sentence case is maintained in Zotero master data instead.
+          - . after author, corporate authors have no trailing initial (guide p4 WHO)
+          - editor-as-author: " ed." no parens, singular (guide p3 edited book)
+          - in-text page locator: 2019:78 without space (guide p1/p4)
+          - in-text non-page locator: colon instead of comma (guide p5 Coughlan)
+          - electronic article with pages keeps DOI/URL, keyed on Accessed field (guide p2 Stansfield)
+          - locale: style-options before terms (CSL schema order)
+          - KNOWN ISSUE: comma before & when last author is an institution.
+            Upstream citeproc-js bug - literal names ignore delimiter-precedes-last
+            (Juris-M/citeproc-js #248, open). No CSL fix. Workaround: enter the
+            organisation in two-field mode in Zotero.
+    Version 1.9 : 
+          - names: no comma before & (delimiter-precedes-last="never"), confirmed
+            against guide p2 Sidebotham (8 authors)
+          - chapter: "In:" and editors before book title with eds. label (new macro eds-chapter)
+          - title-online: . after title when no URL
+          - container-title-online: . after container title before [online]
+          - force eds. with period (locale term editor + label suffix in eds-chapter)
+          - added space between author initials (guide p1 Altbach, P. G.)
     Version 1.9 : 
           - names: no comma before & (delimiter-precedes-last="never")
           - chapter: "In:" and editors before book title with eds. label (new macro eds-chapter)
