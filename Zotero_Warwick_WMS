@@ -78,8 +78,8 @@
           - changed order of Location and publisher to the end for reports
     ______________
 
-    <link href="http://www.zotero.org/styles/harvard-coventry-university" rel="self"/>
-    <link href="http://www.zotero.org/styles/harvard-university-of-birmingham" rel="template"/>
+    <link href="https://github.com/tangozwo-max/Zotero_Warwick_WMS" rel="self"/>
+    <link href="http://www.zotero.org/styles/harvard-coventry-university" rel="template"/>
     <link href="https://warwick.ac.uk/services/library/students/referencing/referencing-styles/harvard-wms-referencing-guide.pdf" rel="documentation"/>
     -->
     <author>
