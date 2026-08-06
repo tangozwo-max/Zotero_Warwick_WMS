@@ -3,7 +3,7 @@
   <info>
     <title>Warwick WMS beta 1.10</title>
     <title-short>WarwickWMS</title-short>
-    <updated>2026-08-06T00:00:00+00:00</updated>
+    
     <id>http://www.zotero.org/styles/harvard-coventry-university</id>
     <!-- >
  ##### Information #####
@@ -88,7 +88,7 @@
     </author>
     <category citation-format="author-date"/>
     <summary>The Warwick WMS author-date style - adapted from Coventry University by Chris Hastie. Substantial changes to the XML code have been done</summary>
-    <updated>2026-01-05T14:58:08+00:00</updated>
+    <updated>2026-08-06T00:00:00+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale>
