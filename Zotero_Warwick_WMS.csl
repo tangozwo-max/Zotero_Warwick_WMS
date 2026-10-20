@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-GB">
   <info>
-    <title>Warwick WMS beta 1.10</title>
+    <title>Warwick WMS beta 1.11</title>
     <title-short>WarwickWMS</title-short>
-    
+
     <id>http://www.zotero.org/styles/harvard-coventry-university</id>
     <!-- >
  ##### Information #####
@@ -19,6 +19,13 @@
     ##### Change History #####
     All changes are marked in the code below with version number for audit trial.
           ______________
+    Version 1.11 : 
+          - journal article with pages + Accessed: stray space before ". Available from" removed
+            (locator group and access <choose> were sibling elements, so the layout delimiter " "
+            was inserted between them; both are now wrapped in one <group>, no delimiter).
+            No change of logic: the access clause is still keyed on the Accessed field (guide p2 Stansfield).
+          - verified with citeproc-js on Ng 2019, Gariepy 2016, Storebo 2020 (2020 (5): CD012955),
+            Zanarini 2024 (85 (4): 24m15457) and NICE NG225 (report form) - 2026-10-20
     Version 1.10 : 
           - removed text-case="sentence" from title macro - TESTED AND REJECTED:
             lowercases proper nouns (Facebook -> facebook, LIFE -> life, "I am" -> "i am").
@@ -88,7 +95,7 @@
     </author>
     <category citation-format="author-date"/>
     <summary>The Warwick WMS author-date style - adapted from Coventry University by Chris Hastie. Substantial changes to the XML code have been done</summary>
-    <updated>2026-08-06T00:00:00+00:00</updated>
+    <updated>2026-10-20T16:30:00+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale>
@@ -409,11 +416,11 @@
         </if>
         <else>
            <group delimiter=":&#160;"> <!-- WWMS change 1.10 colon before non-page locator per guide p5 -->
-            <group delimiter=", "> <!-- WMS 1.4 fix add , -->     
+            <group delimiter=", "> <!-- WMS 1.4 fix add , -->    
               <text macro="author-short"/>
               <text macro="year-date"/>
             </group>
-            <group delimiter="&#160;">                           
+            <group delimiter="&#160;">                            
               <label variable="locator" form="short" strip-periods="false"/>
               <text variable="locator"/>
             </group>
@@ -499,6 +506,7 @@
                 </if>
                 <else>
                     <!-- WMS CHANGE In case pages, then normal journal -->
+                    <group> <!-- WWMS change 1.11 wrapper group: locator + access clause in one group, removes the stray space before ". Available from" -->
                     <group delimiter=", ">
                       <text variable="container-title" font-style="italic" /> <!-- WWMS change 1.3 removed text-case="title" to not capitalise titles -->
                       <group delimiter=", ">
@@ -518,6 +526,7 @@
                       </if>
                     </choose>
                       <!--  WMS change, REMOVED "Accessed"    in general for journals     <text macro="access"/> -->
+                    </group> <!-- WWMS change 1.11 end of wrapper group (locator + access clause) -->
                 </else>
               </choose>
             
